@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :posts, only: [:new, :create]
+  resources :posts, only: [:index, :new, :create]
 
   get "sign-up", to: "registrations#new"
   post "sign-up", to: "registrations#create"
@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   get "sign-in", to: "sessions#new"
   post "sign-in", to: "sessions#create"
 
-  root to: "home#index"
+  root to: "posts#index"
 end

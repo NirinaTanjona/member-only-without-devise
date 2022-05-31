@@ -1,0 +1,9 @@
+<h1>Posts</h1>
+<%= form_with model: @post do |form| %>
+  <%= form.text_field :author, value: Current.user.username, type: :hidden %><br>
+  <%= form.number_field :user_id, value: Current.user.id, type: :hidden %><br>
+  <%= form.label "Title" %><br><br>
+  <%= form.text_field :title %><br><br>
+  <%= form.text_area :body, placeholder: "post article here" %><br><br>
+  <%= form.submit %>
+  <% end %>

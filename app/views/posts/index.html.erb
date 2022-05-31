@@ -1,0 +1,16 @@
+<h1>Home page!</h1>
+<ul><% @posts.each do |post| %>
+  <li><%= post.author %></li>
+  <li><%= post.title %></li>
+  <li><%= post.body %></li>
+<% end %>
+</ul>
+<% if Current.user %>
+  Logged in as: <%= Current.user.email %>
+  <%= button_to "logout", logout_path, method: :delete %>
+  <%= link_to "new post", new_post_path %>
+<% else %>
+  <%= link_to "login for post", sign_in_path %><br>
+  <%= link_to "register", sign_up_path %>
+<% end %>
+<br>

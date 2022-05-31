@@ -1,0 +1,9 @@
+<h1>Home page!</h1>
+<% if Current.user %>
+  Logged in as: <%= Current.user.email %>
+  <%= button_to "logout", logout_path, method: :delete %>
+<% else %>
+  <%= link_to "register", sign_up_path %><br>
+  <%= link_to "log in", sign_in_path %>
+<% end %>
+<br>
